@@ -13,7 +13,7 @@ function setPage(ppa,customized) {
 
 window.addEventListener('load',()=>{
     var ppa = document.getElementById("ppa");
-    var customized = document.getElementById("On-Site Generation");
+    var customized = document.getElementById("customized");
     var op_type = document.getElementById("op_type");
     setPage(ppa,customized);
     op_type.addEventListener("change", ()=>{
