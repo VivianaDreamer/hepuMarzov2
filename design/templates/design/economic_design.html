@@ -1,0 +1,80 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Economic Design {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Economic Project Input</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="feather icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="{% url 'design' %}">Technical Design</a></li>
+                            <li class="breadcrumb-item"><a href="">Economic Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <p>{{form.errors}}</p>
+                <form method="POST">{% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Costs</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>{{form.energy_cost.label}}</label>
+                                            {{form.energy_cost}}
+                                            <br>
+                                            <label>{{form.water_type.label}}</label>
+                                            {{form.water_type}}
+                                            <br>
+                                            <label>{{form.develop_cost.label}}</label>
+                                            {{form.develop_cost}}
+                                            <br>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>{{form.water_cost.label}}</label>
+                                            {{form.water_cost}}
+                                            <br>
+                                            <label>{{form.elec_cost.label}}</label>
+                                            {{form.elec_cost}}
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <input class="btn btn-primary col-md-12" type="submit" value="Next">
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

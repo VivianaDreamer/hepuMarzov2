@@ -1,0 +1,131 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Design 2 {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Technical Design</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="feather icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="">Technical Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <form method="POST"> {% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Project assessment</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>{{form.project_name.label}}</label>
+                                            {{form.project_name}} <br>
+                                            <br>
+                                            <label>{{form.location.label}}</label>
+                                            {{form.location}}
+                                            <br>
+                                            <label>{{form.op_type.label}}</label>
+                                            {{form.op_type}}
+                                            <br>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>{{form.cod.label}}</label>
+                                            {{form.cod}} <br>
+                                            <br>
+                                            <label>{{form.horizon.label}}</label>
+                                            {{form.horizon}}
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" id="ppa">
+                                <div class="card-header">
+                                    <h5>PPA</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>{{form.ppa_type.label}}</label>
+                                            {{form.ppa_type}}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>{{form.nom_power.label}}</label>
+                                            {{form.nom_power}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" id="customized">
+                                <div class="card-header">
+                                    <h5>Customized</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>{{form.customized_from.label}}</label>
+                                            {{form.customized_from}}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>{{form.customized_to.label}}</label>
+                                            {{form.customized_to}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Electrolyzer</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>{{form.elec_type.label}}</label>
+                                            {{form.elec_type}}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>{{form.elec_size.label}}</label>
+                                            {{form.elec_size}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <input class="btn btn-primary col-md-12" type="submit" value="Next">
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="/static/assets/js/design2.js"></script>
+{% endblock javascripts %}
