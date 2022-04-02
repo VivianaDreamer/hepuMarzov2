@@ -14,7 +14,7 @@ function setPage(op_type, ppa, customized) {
 
 window.addEventListener('load',()=>{
     var ppa = document.getElementById("ppa");
-    var customized = document.getElementById("customized");
+    var customized = document.getElementById("On-Site Generation");
     var op_type = document.getElementById("op_type");
     setPage(op_type, ppa, customized);
     op_type.addEventListener("change",()=>{
